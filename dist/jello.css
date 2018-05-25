@@ -1,83 +1,121 @@
-:root {
-  --blue: #003666;
-  --blueblack: #051736;
-  --lightblue: #005be2;
-  --black: #59626a;
-  --grey: #8996a0;
-  --ash: #47525d;
-  --orange: #ff6c5f;
-  --pink: #990033;
-  --insta: #bf0d3e;
-  --lightgreen: #00ad45;
-  --darkgreen: #005238;
-  --green: #057855;
-  --yellow: #feba02;
-  --lightyellow: #fbbc05;
-  --darkyellow: #f79400;
-  --red: #FF0000;
-  --lightred: #ea4335;
-  --darkred: #990000;
-  --defaultFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
-
 /* Blue */
 .blue {
-  color: var(--blue); }
+  color: #003666; }
 
 .blueblack {
-  color: var(--blueblack); }
+  color: #051736; }
 
 .lightblue {
-  color: var(--lightblue); }
+  color: #005be2; }
 
 /* Black */
 .black {
   color: black; }
 
 .grey {
-  color: var(--grey); }
+  color: #8996a0; }
 
 .ash {
-  color: var(--ash); }
+  color: #47525d; }
 
 /* Orange  & Pink*/
 .orange {
-  color: var(--orange); }
+  color: #ff6c5f; }
 
 .pink {
-  color: var(--pink); }
+  color: #bf0d3e; }
 
 .insta {
-  color: var(--insta); }
+  color: #990033; }
 
 /* Green */
 .green {
-  color: var(--green); }
+  color: #057855; }
 
 .darkgreen {
-  color: var(--darkgreen); }
+  color: #005238; }
 
 .lightgreen {
-  color: var(--lightgreen); }
+  color: #00ad45; }
 
 /* Yellow */
 .yellow {
-  color: var(--yellow); }
+  color: #e5ab00; }
 
 .lightyellow {
-  color: var(--lightyellow); }
+  color: #feba02; }
 
-.darkyellow {
-  color: var(--darkyellow); }
+.gold {
+  color: #f79400; }
 
 /* Red */
 .red {
-  color: var(--red); }
+  color: #FF0000; }
 
 .lightred {
-  color: var(--lightred); }
+  color: #ea4335; }
 
 .darkred {
-  color: var(--darkred); }
+  color: #990000; }
+
+.bg-blue {
+  background: #003666; }
+
+.bg-blueblack {
+  background: #051736; }
+
+.bg-lightblue {
+  background: #005be2; }
+
+/* Black */
+.bg-black {
+  background: #000000; }
+
+.bg-grey {
+  background: #8996a0; }
+
+.bg-ash {
+  background: #47525d; }
+
+/* Orange  & Pink*/
+.bg-orange {
+  background: #ff6c5f; }
+
+.bg-pink {
+  background: #bf0d3e; }
+
+.bg-insta {
+  background: #990033; }
+
+/* Green */
+.bg-green {
+  background: #057855; }
+
+.bg-darkgreen {
+  background: #005238; }
+
+.bg-lightgreen {
+  background: #00ad45; }
+
+/* Yellow */
+.bg-yellow {
+  background: #e5ab00; }
+
+.bg-lightyellow {
+  background: #feba02; }
+
+.bg-gold {
+  background: #f79400; }
+
+/* Red */
+.bg-red {
+  background: #FF0000; }
+
+.bg-lightred {
+  background: #ea4335; }
+
+.bg-darkred {
+  background: #990000; }
 
 @font-face {
   font-family: "Sans-regular";
@@ -131,5 +169,8 @@ ul li {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; }
+
+.text-centered {
+  text-align: center; }
 
 /*# sourceMappingURL=jello.css.map */

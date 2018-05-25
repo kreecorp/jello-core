@@ -1,5 +1,6 @@
-@import 'colors.scss';
-@import 'font.scss';
+//import  elements
+@import './elements/colors.scss';
+@import './elements/font.scss';
 
 
 * {
@@ -12,15 +13,19 @@ a {
     text-decoration: none !important;
 }
 
-ul { 
-     li{ 
+ul {
+    li {
         list-style: none;
-         }
+    }
 }
 
-.center{
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+}
+
+.text-centered {
+    text-align: center;
 }

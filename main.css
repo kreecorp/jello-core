@@ -1,59 +1,69 @@
+@charset "UTF-8";
 @import url("./dist/jello.css");
-* {
-    /* font-size: 1.2em; */
-    /* outline: 1px solid teal !important;  */
-    /* font-weight: bolder; */
-}
-
-div{ 
-    margin: 5px;
-    outline: 3px solid teal;
-    padding: 10px;
-    text-transform: capitalize;
-}
-.center { 
-    outline: none;   
-}
-
-h1 {
+.wrapper {
+  padding: 10px 100px;
+  height: auto; }
+  .wrapper h1 {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-family: "Sans-regular";
-    
-}
+    font-family: "Sans-regular"; }
+    .wrapper h1::after {
+      content: "🔥"; }
+
+.docs .colors {
+  outline: 1px solid red;
+  margin-top: 60px; }
+  .docs .colors h2 {
+    font-family: "Sans-regular"; }
+    .docs .colors h2::before {
+      content: "1.";
+      margin-right: 5px; }
+  .docs .colors .color-wrapper {
+    box-sizing: border-box;
+    height: 100px;
+    width: 60%;
+    margin-top: 20px; }
+    .docs .colors .color-wrapper .color {
+      border-radius: .25rem;
+      width: 170px;
+      color: white;
+      padding: 5px 20px;
+      font-family: "Sans-regular";
+      margin: 10px 10px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1); }
+      .docs .colors .color-wrapper .color div {
+        margin: 8px 0px; }
+      .docs .colors .color-wrapper .color .color-name {
+        font-size: 18px; }
+      .docs .colors .color-wrapper .color .color-bg {
+        opacity: 0.7;
+        font-size: 15px; }
 
 .sans {
-    font-family: "Sans-regular";
-}
+  font-family: "Sans-regular"; }
 
-.sans-bold{ 
-    font-family: "sans-bold";
-}
+.sans-bold {
+  font-family: "sans-bold"; }
 
-.augusta{
-    font-family: "Augusta-Regular";
-}
+.augusta {
+  font-family: "Augusta-Regular"; }
 
-.augusta-light{  
-    font-family: "Augusta-Light"
-}
+.augusta-light {
+  font-family: "Augusta-Light"; }
 
-.augusta-bold{ 
-    font-family: "Augusta-Bold";
-}
+.augusta-bold {
+  font-family: "Augusta-Bold"; }
 
-.augusta-black{ 
-    font-family: "Augusta-black";    
-}
+.augusta-black {
+  font-family: "Augusta-black"; }
 
-.damain{ 
-    font-family: "Damain-Regular";
-}
+.damain {
+  font-family: "Damain-Regular"; }
 
-.damain-meduim{ 
-    font-family: "Damain-Medium";
-}
+.damain-meduim {
+  font-family: "Damain-Medium"; }
 
-.damain-bold{ 
-    font-family: "Damain-Bold"; 
-}
+.damain-bold {
+  font-family: "Damain-Bold"; }
+
+/*# sourceMappingURL=main.css.map */
