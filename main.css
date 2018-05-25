@@ -1,8 +1,7 @@
 @charset "UTF-8";
 @import url("./dist/jello.css");
 .wrapper {
-  padding: 10px 100px;
-  height: auto; }
+  padding: 10px 100px; }
   .wrapper h1 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -10,19 +9,23 @@
     .wrapper h1::after {
       content: "🔥"; }
 
-.docs .colors {
+h2 {
+  font-family: "Sans-regular";
   outline: 1px solid red;
+  width: 60%;
+  margin: 20px auto; }
+
+.docs .colors {
   margin-top: 60px; }
-  .docs .colors h2 {
-    font-family: "Sans-regular"; }
-    .docs .colors h2::before {
-      content: "1.";
-      margin-right: 5px; }
+  .docs .colors h2::before {
+    content: "1.";
+    margin-right: 5px; }
   .docs .colors .color-wrapper {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    height: 100px;
     width: 60%;
-    margin-top: 20px; }
+    margin: 20px auto;
+    outline: 1px solid red; }
     .docs .colors .color-wrapper .color {
       border-radius: .25rem;
       width: 170px;
@@ -30,6 +33,7 @@
       padding: 5px 20px;
       font-family: "Sans-regular";
       margin: 10px 10px;
+      -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
       box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1); }
       .docs .colors .color-wrapper .color div {
         margin: 8px 0px; }
@@ -38,32 +42,23 @@
       .docs .colors .color-wrapper .color .color-bg {
         opacity: 0.7;
         font-size: 15px; }
-
-.sans {
-  font-family: "Sans-regular"; }
-
-.sans-bold {
-  font-family: "sans-bold"; }
-
-.augusta {
-  font-family: "Augusta-Regular"; }
-
-.augusta-light {
-  font-family: "Augusta-Light"; }
-
-.augusta-bold {
-  font-family: "Augusta-Bold"; }
-
-.augusta-black {
-  font-family: "Augusta-black"; }
-
-.damain {
-  font-family: "Damain-Regular"; }
-
-.damain-meduim {
-  font-family: "Damain-Medium"; }
-
-.damain-bold {
-  font-family: "Damain-Bold"; }
+.docs .fonts h2::before {
+  content: "2."; }
+.docs .fonts .font-wrapper {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 60%;
+  margin: 20px auto;
+  outline: 1px solid red; }
+  .docs .fonts .font-wrapper .font {
+    border-radius: .25rem;
+    color: white;
+    width: 190px;
+    padding: 15px 0px;
+    text-align: center;
+    margin: 10px 10px;
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+    font-size: 16px; }
 
 /*# sourceMappingURL=main.css.map */

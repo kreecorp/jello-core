@@ -122,6 +122,10 @@
   src: url("./fonts/sans-regular.ttf");
   font-weight: normal; }
 @font-face {
+  font-family: "Sans-italic";
+  src: url("./fonts/sans-italic.ttf");
+  font-weight: normal; }
+@font-face {
   font-family: "Sans-Bold";
   src: url("./fonts/sans-bold.ttf");
   font-weight: normal; }
@@ -138,10 +142,6 @@
   src: url("./fonts/Augusta-Bold.ttf");
   font-weight: normal; }
 @font-face {
-  font-family: "Augusta-Black";
-  src: url("./fonts/Augusta-Black.ttf");
-  font-weight: normal; }
-@font-face {
   font-family: "Damain-Regular";
   src: url("./fonts/Damain-Regular-Web.ttf");
   font-weight: normal; }
@@ -153,10 +153,36 @@
   font-family: "Damain-Medium";
   src: url("./fonts/Damain-Medium-Web.ttf");
   font-weight: normal; }
+.sans {
+  font-family: "Sans-regular"; }
+
+.sans-italic {
+  font-family: "Sans-italic"; }
+
+.sans-bold {
+  font-family: "sans-bold"; }
+
+.augusta {
+  font-family: "Augusta-Regular"; }
+
+.augusta-light {
+  font-family: "Augusta-Light"; }
+
+.augusta-bold {
+  font-family: "Augusta-Bold"; }
+
+.damain {
+  font-family: "Damain-Regular"; }
+
+.damain-meduim {
+  font-family: "Damain-Medium"; }
+
+.damain-bold {
+  font-family: "Damain-Bold"; }
+
 * {
   margin: 0;
-  padding: 0;
-  font-family: var(--defaultFont); }
+  padding: 0; }
 
 a {
   text-decoration: none !important; }
@@ -165,9 +191,16 @@ ul li {
   list-style: none; }
 
 .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
 
 .text-centered {
