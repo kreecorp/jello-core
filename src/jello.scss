@@ -1,7 +1,5 @@
-//import  elements
-@import './elements/colors.scss';
-@import './elements/font.scss';
-
+@import "elements/colors";
+@import "elements/fonts";
 
 * {
     margin: 0;
@@ -35,3 +33,4 @@ ul {
 .text-centered {
     text-align: center;
 }
+
