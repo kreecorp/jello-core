@@ -1,0 +1,26 @@
+@import 'colors.scss';
+@import 'font.scss';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--defaultFont);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul { 
+     li{ 
+        list-style: none;
+         }
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+}
