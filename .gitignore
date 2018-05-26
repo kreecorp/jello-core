@@ -1,5 +1,5 @@
 dist/
 .sass-cache/
-*.css.map
-*.css
+src/*.css.map
+src/*.css
 .vscode

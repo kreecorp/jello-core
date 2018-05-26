@@ -1,0 +1,25 @@
+{
+  "name": "jello-core",
+  "version": "1.0.0",
+  "description": "core components & elements for Jello css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KreeCorp/jello-core.git"
+  },
+  "keywords": [
+    "jello",
+    "css",
+    "js",
+    "gulp"
+  ],
+  "author": "Kree",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KreeCorp/jello-core/issues"
+  },
+  "homepage": "https://github.com/KreeCorp/jello-core#readme"
+}
