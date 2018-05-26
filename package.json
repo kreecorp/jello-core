@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/KreeCorp/jello-core/issues"
   },
-  "homepage": "https://github.com/KreeCorp/jello-core#readme"
+  "homepage": "https://github.com/KreeCorp/jello-core#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "gulp-sass": "^4.0.1",
+    "gulp-webserver": "^0.9.1"
+  }
 }
