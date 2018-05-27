@@ -9,7 +9,7 @@ yarn
 
 # run dev server
 yarn start
-```
-# complile and watch  sass
+
+plile and watch  sass
 yarn build-css
 ```
