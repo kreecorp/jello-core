@@ -4,6 +4,8 @@
   "description": "core components & elements for Jello css",
   "main": "index.js",
   "scripts": {
+    "start": "gulp start",
+    "build-css": "gulp sass && gulp sass:watch ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
