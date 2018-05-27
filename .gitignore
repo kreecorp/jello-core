@@ -3,3 +3,4 @@ dist/
 src/*.css.map
 src/*.css
 .vscode
+node_modules/
