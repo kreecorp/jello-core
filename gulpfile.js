@@ -3,14 +3,13 @@
 var
     gulp = require('gulp'),
     sass = require('gulp-sass'),
-    server = require('gulp-webserver');
 
-var paths = {
-    sass: {
-        src: './src/demo.scss',
-        dest: './src/'
+    var paths = {
+        sass: {
+            src: './src/demo.scss',
+            dest: './src/'
+        }
     }
-}
 
 
 gulp.task('sass', function () {

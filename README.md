@@ -10,6 +10,6 @@ yarn
 # run dev server
 yarn start
 
-# complie and watch  sas
+# complie and watch  sass
 yarn build-css
 ```
