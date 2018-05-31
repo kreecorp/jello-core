@@ -35,7 +35,6 @@ h2 {
 }
 
 .docs {
-    // Colors
     .colors {
         h2 {
             &::before {
@@ -43,10 +42,12 @@ h2 {
                 margin-right: 5px;
             }
         }
+
+
         .color-wrapper {
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            width: 50%;
+            width: 60%;
             margin: 20px auto;
             .color {
                 border-radius: .25rem;
@@ -71,7 +72,8 @@ h2 {
                 }
             }
         }
-    } // Fonts
+    }
+
     .fonts {
         h2 {
             &::before {
@@ -95,21 +97,22 @@ h2 {
                 font-size: 16px;
             }
         }
-    } // Labels
+    } // Fonts
     .labels {
-        h2::before {
-            content: "3. "
+        h2:before {
+            content: "3. ";
         }
+
         .labels-wrapper {
             font-family: "freight-medium" !important;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             width: 50%;
             margin: 20px auto;
+            outline: 1px solid red;
 
             &>span {
-                margin: 0px 20px;
-
+                margin: 10px 20px;
             }
         }
     }
