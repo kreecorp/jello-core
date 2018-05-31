@@ -1,19 +1,50 @@
-.label {
-    border-radius: 3px;
-}
+@import "../mixins/em";
 
-.sm {
-    padding: 7px 15px;
-    font-size: 13px;
-}
+.labels {
+    .label {
+        border-radius: em(3);
+    }
 
-.md {
-    padding: 10px 20px;
-    font-size: 17px;
-}
+    .sm {
+        padding: em(7) em(10);
+        font-size: em(12);
+    }
 
-.lg {
-    padding: 15px 25px;
-    font-size: 20px;
+    .md {
+        padding: em(9) em(19);
+        font-size: (15);
+    }
+
+    .lg {
+        padding: em(13) em(25);
+        font-size: em(20);
+    }
+
+    .active {
+        position: relative;
+        white-space: nowrap;
+
+
+
+        & {
+            &::after {
+                background: $lightgreen;
+                border-radius: .5rem;
+                -webkit-box-shadow: 0 0 0 .1rem white;
+                box-shadow: 0 0 0 .1rem white;
+                color: white;
+                content: attr(data-badge);
+                display: inline-block;
+            }
+        }
+
+
+        &:after {
+            height: em(10);
+            width: em(10);
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
 
 }

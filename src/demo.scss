@@ -107,11 +107,11 @@ h2 {
             font-family: "freight-medium" !important;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            width: 50%;
+            width: 35%;
             margin: 20px auto;
             outline: 1px solid red;
 
-            &>span {
+            &>div {
                 margin: 10px 20px;
             }
         }
