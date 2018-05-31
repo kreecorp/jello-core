@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp start",
-    "build-css": "gulp sass && gulp sass:watch ",
+    "dev": "gulp sass && gulp sass:watch ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/KreeCorp/jello-core#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.0"
   },
   "dependencies": {
     "gulp-sass": "^4.0.1",

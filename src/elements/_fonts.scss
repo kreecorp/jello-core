@@ -36,21 +36,43 @@
 
 @font-face {
     font-family: "Damain-Regular";
-    src: url("./fonts/Damain-Regular-Web.ttf");
+    src: url("./fonts/Damain-Regular.ttf");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Damain-Bold";
-    src: url("./fonts/Damain-Semibold-Web.ttf");
+    src: url("./fonts/Damain-Semibold.ttf");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Damain-Medium";
-    src: url("./fonts/Damain-Medium-Web.ttf");
+    src: url("./fonts/Damain-Medium.ttf");
     font-weight: normal;
 }
+
+@font-face {
+    font-family: "Freight-Light";
+    src: url("./fonts/Freight-Light.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Freight-Medium";
+    src: url("./fonts/Freight-Medium.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Freight-Bold";
+    src: url("./fonts/Freight-Bold.ttf");
+    font-weight: normal;
+}
+
+
+
+
 
 
 .sans {
@@ -87,4 +109,16 @@
 
 .damain-bold {
     font-family: "Damain-Bold";
+}
+
+.freight {
+    font-family: "Freight-Light";
+}
+
+.freight-medium {
+    font-family: "Freight-Medium";
+}
+
+.freight-bold {
+    font-family: "Freight-Bold";
 }

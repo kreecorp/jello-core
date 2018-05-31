@@ -4,14 +4,12 @@ var
     gulp = require('gulp'),
     sass = require('gulp-sass'),
 
-    var paths = {
+    paths = {
         sass: {
             src: './src/demo.scss',
             dest: './src/'
         }
     }
-
-
 gulp.task('sass', function () {
     return gulp.src(paths.sass.src)
         .pipe(sass().on('error', sass.logError))
@@ -19,7 +17,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('sass:watch', function () {
-    gulp.watch(paths.sass.src, ['sass']);
+    gulp.watch('./src/*.scss', ['sass']);
 });
 
 gulp.task('server', function () {
