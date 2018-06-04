@@ -1,6 +1,7 @@
 dist/
-.sass-cache/
+src/.sass-cache/
 src/*.css.map
+src/*.scss.map
 src/*.css
 .vscode
 node_modules/
