@@ -1,33 +1,69 @@
-'use strict';
+"use strict";
 
-var
-    gulp = require('gulp'),
-    sass = require('gulp-sass'),
+var gulp = require("gulp"),
+  sass = require("gulp-sass"),
+  connect = require("gulp-connect");
 
-    paths = {
-        sass: {
-            src: './src/demo.scss',
-            dest: './src/'
-        }
-    }
-gulp.task('sass', function () {
-    return gulp.src(paths.sass.src)
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(paths.sass.dest));
+let paths = {
+  html: {
+    base: "./src/index.html",
+    views: "./src/views/*.html"
+  },
+  sass: {
+    src: "./src/demo.scss",
+    dest: "./src/"
+  }
+};
+
+// Server at port 2020
+gulp.task("server", function() {
+  connect.server({
+    root: "./src",
+    livereload: true,
+    port: 2020
+  });
 });
 
-gulp.task('sass:watch', function () {
-    gulp.watch('./src/*.scss', ['sass']);
+// HTML auto reloader
+gulp.task("html", () => {
+  return gulp.src(paths.html.base).pipe(connect.reload());
 });
 
-gulp.task('server', function () {
-    return gulp.src('src')
-        .pipe(server({
-            livereload: true,
-            open: true,
-            port: 3000
-        }));
+gulp.task("views", () => {
+  return gulp.src(paths.html.views).pipe(connect.reload());
 });
 
+gulp.task("html:watch", () => {
+  gulp.watch(paths.html.src, ["html"]);
+});
 
-gulp.task('start', ['sass', 'sass:watch', 'server']);
+gulp.task("views:watch", () => {
+  gulp.watch(paths.html.views, ["views"]);
+});
+
+// Sass compiler and auto reloader
+gulp.task("sass", function() {
+  return gulp
+    .src(paths.sass.src)
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest(paths.sass.dest));
+});
+
+gulp.task("component:watch", function() {
+  gulp.watch("./src/*/*.scss", ["sass"]);
+});
+
+gulp.task("sass:watch", function() {
+  gulp.watch("./src/*.scss", ["sass"]);
+});
+
+gulp.task("start", [
+  "server",
+  "html",
+  "html:watch",
+  "views",
+  "views:watch",
+  "sass",
+  "component:watch",
+  "sass:watch"
+]);

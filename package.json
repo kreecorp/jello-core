@@ -4,9 +4,7 @@
   "description": "core components & elements for Jello css",
   "main": "index.js",
   "scripts": {
-    "start": "gulp start",
-    "dev": "gulp sass && gulp sass:watch ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp start"
   },
   "repository": {
     "type": "git",
@@ -24,11 +22,10 @@
     "url": "https://github.com/KreeCorp/jello-core/issues"
   },
   "homepage": "https://github.com/KreeCorp/jello-core#readme",
-  "devDependencies": {
-    "gulp": "^3.9.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "gulp-sass": "^4.0.1",
-    "gulp-webserver": "^0.9.1"
+    "gulp-connect": "^5.5.0",
+    "gulp": "^3.9.0"
   }
 }

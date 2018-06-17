@@ -1,8 +1,9 @@
 @import "jello";
 
-* {
-    font-family: "Sans-regular";
-}
+
+// * {
+//     font-family: "Sans-regular";
+// }
 
 .docs {
     margin: 40px 100px;
@@ -22,7 +23,7 @@
             &>a {
                 margin: 10px 10px 10px 0px;
                 font-size: 17px;
-                color: $blueblack;
+                // color: $blueblack;
                 border: 2px solid $gold;
                 padding: 10px 20px;
             }
