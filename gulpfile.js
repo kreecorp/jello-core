@@ -47,6 +47,7 @@ gulp.task("sass", function() {
     .src(paths.sass.src)
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest(paths.sass.dest));
+  pipe(connect.reload());
 });
 
 gulp.task("component:watch", function() {
