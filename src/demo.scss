@@ -1,9 +1,5 @@
 @import "jello";
 
-* {
-  outline: 1px solid red;
-}
-
 .docs {
   margin: 40px 100px;
   padding: 30px;
@@ -41,7 +37,7 @@ h2 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 60%;
-  margin: 20px auto;
+  margin: 30px auto;
 }
 
 .main {
@@ -109,8 +105,22 @@ h2 {
   box-sizing: border-box;
   width: 35%;
   margin: 20px auto;
-  outline: 1px solid red;
   & > div {
     margin: 10px 20px;
+  }
+}
+
+.typo {
+  margin-bottom: 20px;
+  width: 85%;
+  .name {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+  .typography {
+    outline: 1px solid $blueblack;
+    padding: 10px;
+    font-size: 28.5px;
+    letter-spacing: 2px;
   }
 }
