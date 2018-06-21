@@ -88,6 +88,12 @@
   font-weight: normal;
   src: url("../fonts/Kre.ttf");
 }
+@font-face {
+  font-family: "Kre";
+  font-display: auto;
+  font-weight: normal;
+  src: url("../fonts/Kre.ttf");
+}
 
 @font-face {
   font-family: "Jessy";
@@ -107,11 +113,12 @@
   font-family: "Noragami";
   font-display: auto;
   font-weight: normal;
-  src: url("../fonts/Noragami.tff");
+  src: url("../fonts/Noragami.ttf");
 }
 
 .sans {
   font-family: "Sans-Regular";
+  font-weight: 400px;
 }
 
 .sans-italic {
