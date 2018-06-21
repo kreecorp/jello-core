@@ -12,7 +12,8 @@ let paths = {
   sass: {
     src: "./src/demo.scss",
     dest: "./src/"
-  }
+  },
+  jello: "./src/jello.scss"
 };
 
 // Server at port 2020
@@ -34,7 +35,7 @@ gulp.task("views", () => {
 });
 
 gulp.task("html:watch", () => {
-  gulp.watch(paths.html.src, ["html"]);
+  gulp.watch(paths.html.base, ["html"]);
 });
 
 gulp.task("views:watch", () => {
@@ -46,8 +47,8 @@ gulp.task("sass", function() {
   return gulp
     .src(paths.sass.src)
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest(paths.sass.dest));
-  pipe(connect.reload());
+    .pipe(gulp.dest(paths.sass.dest))
+    .pipe(connect.reload());
 });
 
 gulp.task("component:watch", function() {

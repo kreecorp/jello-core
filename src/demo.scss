@@ -1,7 +1,7 @@
 @import "jello";
 
 * {
-  font-family: "Sans-regular";
+  // outline: 1px solid red;
 }
 
 .docs {
@@ -10,6 +10,7 @@
 
   .base {
     .topic {
+      font-family: "Sans-Regular";
       font-size: 25px;
       margin: 10px 0px;
     }
@@ -21,7 +22,8 @@
       & > a {
         margin: 10px 10px 10px 0px;
         font-size: 17px;
-        // color: $blueblack;
+        font-family: "Sans-Regular";
+        color: $blueblack;
         border: 2px solid $gold;
         padding: 10px 20px;
       }
