@@ -1,0 +1,20 @@
+
+//Import all your scss files into this main file
+//@import 'OTHER_SCSS_FILES'
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration:none;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    alighn-items: center;
+    flex-wrap:warp;
+}
+.text-center{
+    text-align:center;
+}

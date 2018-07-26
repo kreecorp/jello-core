@@ -1,71 +1,158 @@
-"use strict";
 
-var gulp = require("gulp"),
-  sass = require("gulp-sass"),
-  connect = require("gulp-connect");
+'use strict';
 
-let paths = {
-  html: {
-    base: "./src/index.html",
-    views: "./src/views/*.html"
-  },
-  sass: {
-    src: "./src/demo.scss",
-    dest: "./src/"
-  },
-  jello: "./src/jello.scss"
-};
+var
+    gulp = require('gulp'),
+    connect = require('gulp-connect'),
+    htmlmin = require('gulp-htmlmin'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cleanCSS = require('gulp-clean-css'),
+    imagemin = require('gulp-imagemin'),
+    uglify = require('gulp-uglify'),
+    pump = require('pump'),
+    jshint = require('gulp-jshint');
 
-// Server at port 2020
-gulp.task("server", function() {
-  connect.server({
-    root: "./src",
-    livereload: true,
-    port: 2020
-  });
-});
+var path = {
+    html: {
+        src: './index.html',
+        views: './views/*.html',
+        viewsbuild: './public/views',
+        build: './public/'
+    },
+    css: {
+        watch: './src/css/*.css',
+        build: './public/src/css/',
+
+    },
+    js: {
+        watch: './src/js/*.js',
+        build: './public/src/js/'
+    },
+    img: {
+        src: './src/img/*',
+        build: './public/src/img/'
+    }
+}
+
+// Basic server on port:2018
+gulp.task('server', function () {
+    connect.server({
+        livereload: true,
+        port: 2018
+    });
+})
+
+
+// HTML loader
+gulp.task('html', function () {
+    return gulp.src(path.html.src)
+        .pipe(connect.reload());
+})
+
 
 // HTML auto reloader
-gulp.task("html", () => {
-  return gulp.src(paths.html.base).pipe(connect.reload());
+gulp.task('html:watch', function () {
+    gulp.watch(path.html.src, ['html'])
+})
+
+
+// Views loader
+gulp.task('views:watch', function () {
+    gulp.watch(path.html.views, ['html'])
+})
+
+// eslint & jshint for js files
+gulp.task('js'),
+    function () {
+        return gulp.src(path.js.watch)
+            .pipe(jshint())
+            .pipe(jshint.reporter('jshint-stylish'))
+            .pipe(jshint.reporter('fail'))
+    }
+
+// watch js files with eslint jshint on
+gulp.task('js:watch', function () {
+    gulp.watch(path.js.watch, ['js'])
+})
+
+// css compiler
+gulp.task('css', function () {
+    return gulp.src(path.css.watch)
+        .pipe(connect.reload());
 });
 
-gulp.task("views", () => {
-  return gulp.src(paths.html.views).pipe(connect.reload());
+// css watcher
+gulp.task('css:watch', function () {
+    gulp.watch(path.css.watch, ['css']);
 });
 
-gulp.task("html:watch", () => {
-  gulp.watch(paths.html.base, ["html"]);
+gulp.task('dev', ['css', 'js', 'js:watch', 'html:watch', 'views:watch', 'css:watch', 'server']);
+
+
+// Build config
+
+// build index.html file
+gulp.task('index-build', function () {
+    return gulp.src(path.html.src)
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+        }))
+        .pipe(gulp.dest(path.html.build));
 });
 
-gulp.task("views:watch", () => {
-  gulp.watch(paths.html.views, ["views"]);
+
+gulp.task('views-build', function () {
+    return gulp.src(path.html.views)
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest(path.html.viewsbuild));
 });
 
-// Sass compiler and auto reloader
-gulp.task("sass", function() {
-  return gulp
-    .src(paths.sass.src)
-    .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest(paths.sass.dest))
-    .pipe(connect.reload());
+
+gulp.task('css-build', function () {
+    return gulp.src(path.css.watch)
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(path.css.build));
 });
 
-gulp.task("component:watch", function() {
-  gulp.watch("./src/*/*.scss", ["sass"]);
+gulp.task('image-build', function () {
+    return gulp.src(path.img.src)
+        .pipe(imagemin([
+            imagemin.gifsicle({
+                interlaced: true
+            }),
+            imagemin.jpegtran({
+                progressive: true
+            }),
+            imagemin.optipng({
+                optimizationLevel: 5
+            }),
+            imagemin.svgo({
+                plugins: [{
+                        removeViewBox: true
+                    },
+                    {
+                        cleanupIDs: false
+                    }
+                ]
+            })
+        ]))
+        .pipe(gulp.dest(path.img.build))
 });
 
-gulp.task("sass:watch", function() {
-  gulp.watch("./src/*.scss", ["sass"]);
+
+gulp.task('js-build', function (cb) {
+    pump([
+            gulp.src(path.js.watch),
+            uglify(),
+            gulp.dest(path.js.build)
+        ],
+        cb
+    );
 });
 
-gulp.task("start", [
-  "server",
-  "html",
-  "html:watch",
-  "views",
-  "views:watch",
-  "sass",
-  "component:watch",
-  "sass:watch"
-]);
+gulp.task('build', ['index-build', 'views-build', 'css-build', 'image-build', 'js-build']);
