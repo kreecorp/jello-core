@@ -1,0 +1,65 @@
+Arguments: 
+  /usr/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /home/yato-god/usr/local/bin:/home/yato-god/.yarn/bin:/home/yato-god/.config/yarn/global/node_modules/.bin:/home/yato-god/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/yato-god/.go/bin
+
+Yarn version: 
+  1.9.2
+
+Node version: 
+  8.10.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/yato-god/Documents/Projects/on-going/jello-core/package.json: Unexpected token } in JSON at position 651
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:92:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:103:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "jello-core",
+    "version": "1.0.0",
+    "description": "components for jello framework",
+    "main": "src/js/index.js",
+    "scripts": {
+      "start": "gulp dev",
+      "build": "gulp build"
+    },
+    "keywords": [
+      "css",
+      ",",
+      "sass",
+      ",",
+      "jello",
+      ",",
+      "webpack",
+      ",",
+      "gulp"
+    ],
+    "author": "casprine",
+    "license": "MIT",
+    "Dependencies": {
+      "gulp-autoprefixer": "^5.0.0",
+      "gulp-clean-css": "^3.9.4",
+      "gulp-connect": "^5.5.0",
+      "gulp-htmlmin": "^4.0.0",
+      "gulp-imagemin": "^4.1.0",
+      "gulp-jshint": "^2.1.0",
+      "gulp-sass": "^4.0.1",
+      "gulp-uglify": "^3.0.0",
+      "pump": "^3.0.0"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
