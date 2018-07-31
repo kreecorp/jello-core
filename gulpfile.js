@@ -18,7 +18,10 @@ var paths = {
   sass: {
     src: "./style.scss",
     srcBuild: "./public/",
-    watch: "./src/assets/sass/*/*.scss"
+    jello: "./src/assets/*/*.scss"
+  },
+  jello: {
+    index: "./src/assets/sass/jello.scss"
   }
 };
 
@@ -59,6 +62,9 @@ gulp.task("sass", function() {
 gulp.task("sass:watch", function() {
   gulp.watch(paths.sass.watch, ["sass"]);
 });
+gulp.task("jello", function() {
+  gulp.watch(paths.jello.index, ["sass"]);
+});
 
 gulp.task("dev", [
   "server",
@@ -67,5 +73,6 @@ gulp.task("dev", [
   "views",
   "views:watch",
   "sass",
-  "sass:watch"
+  "sass:watch",
+  "jello"
 ]);
