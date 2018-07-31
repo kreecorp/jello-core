@@ -79,7 +79,7 @@ const jello = () => {
 
 gulp.task(
   "dev",
-  gulp.series(
+  gulp.parallel(
     server,
     html,
     sassConverter,
