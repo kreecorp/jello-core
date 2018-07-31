@@ -76,3 +76,18 @@ gulp.task("dev", [
   "sass:watch",
   "jello"
 ]);
+
+// Build Config
+
+gulp.task("index-build", function() {
+  return gulp
+    .src(paths.index.src)
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true
+      })
+    )
+    .pipe(gulp.dest(paths.index.build));
+});
+
+gulp.task("build", ["index-build"]);
