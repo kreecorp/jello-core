@@ -45,7 +45,7 @@ const html = () => {
   return gulp.src(paths.index.src).pipe(connect.reload());
 };
 
-const htmlServer = () => {
+const htmlWatcher = () => {
   gulp.watch(paths.index.src, ["html"]);
 };
 
@@ -53,7 +53,7 @@ const views = () => {
   return gulp.src(paths.views.src).pipe(connect.reload());
 };
 
-const viewsWatch = () => {
+const viewsWatcher = () => {
   gulp.watch(paths.views.src, ["views"]);
 };
 
@@ -65,15 +65,34 @@ const sassConverter = () => {
     .pipe(connect.reload());
 };
 
-const styleWatch = () => {
+const styleWatcher = () => {
   gulp.watch(paths.sass.src, ["sassConverter"]);
 };
 
-const SassWatch = () => {
+const SassWatcher = () => {
   gulp.watch(paths.sass.watch, ["sassConverter"]);
 };
 
 const jello = () => {
   gulp.watch(paths.jello.index, ["sassConverter"]);
 };
-gulp.task("dev", gulp.series(server, html, sassConverter , styleWatch ));
+
+const watcher = () => {
+  gulp.task("watch", gulp.parallel(styleWatcher, sassConverter, jello));
+};
+
+gulp.task(
+  "dev",
+  gulp.series(
+    server,
+    html,
+    sassConverter,
+    views,
+    watcher
+    // styleWatcher,
+    // SassWatcher,
+    // jello,
+    // htmlWatcher,
+    // viewsWatcher
+  )
+);
