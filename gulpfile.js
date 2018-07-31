@@ -4,6 +4,7 @@ var gulp = require("gulp"),
   connect = require("gulp-connect"),
   htmlmin = require("gulp-htmlmin"),
   sass = require("gulp-sass"),
+  cleanCSS = require("gulp-clean-css"),
   autoprefixer = require("gulp-autoprefixer");
 
 var paths = {
@@ -19,6 +20,10 @@ var paths = {
     src: "./style.scss",
     srcBuild: "./public/",
     jello: "./src/assets/*/*.scss"
+  },
+  css: {
+    src: "./style.css",
+    build: "./public/"
   },
   jello: {
     index: "./src/assets/sass/jello.scss"
@@ -59,6 +64,10 @@ gulp.task("sass", function() {
     .pipe(connect.reload());
 });
 
+gulp.task("style:watch", function() {
+  gulp.watch(paths.sass.src, ["sass"]);
+});
+
 gulp.task("sass:watch", function() {
   gulp.watch(paths.sass.watch, ["sass"]);
 });
@@ -74,6 +83,7 @@ gulp.task("dev", [
   "views:watch",
   "sass",
   "sass:watch",
+  "style:watch",
   "jello"
 ]);
 
@@ -90,4 +100,17 @@ gulp.task("index-build", function() {
     .pipe(gulp.dest(paths.index.build));
 });
 
-gulp.task("build", ["index-build"]);
+gulp.task("css-build", function() {
+  return gulp
+    .src(paths.css.src)
+    .pipe(
+      autoprefixer({
+        browsers: ["last 2 versions"],
+        cascade: false
+      })
+    )
+    .pipe(cleanCSS({ compatibility: "ie8" }))
+    .pipe(gulp.dest(paths.css.build));
+});
+
+gulp.task("build", ["index-build", "css-build"]);
