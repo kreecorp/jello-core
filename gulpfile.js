@@ -33,30 +33,39 @@ gulp.task("server", function() {
 });
 
 gulp.task("html", function() {
-  return gulp.src(path.index.src).pipe(connect.reload());
+  return gulp.src(paths.index.src).pipe(connect.reload());
 });
 
 gulp.task("html:watch", function() {
-  gulp.watch(path.index.src, ["html"]);
+  gulp.watch(paths.index.src, ["html"]);
 });
 
 gulp.task("views", function() {
-  return gulp.src(path.views.src).pipe(connect.reload());
+  return gulp.src(paths.views.src).pipe(connect.reload());
 });
 
 gulp.task("views:watch", function() {
-  gulp.watch(path.views.src, ["views"]);
+  gulp.watch(paths.views.src, ["views"]);
 });
 
 gulp.task("sass", function() {
   return gulp
     .src(paths.sass.src)
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("./"));
+    .pipe(gulp.dest("./"))
+    .pipe(connect.reload());
 });
 
 gulp.task("sass:watch", function() {
-  gulp.watch(path.sass.watch, ["sass"]);
+  gulp.watch(paths.sass.watch, ["sass"]);
 });
 
-gulp.task("dev", ["html", "html:watch", "views", "views:watch", "sass:watch"]);
+gulp.task("dev", [
+  "server",
+  "html",
+  "html:watch",
+  "views",
+  "views:watch",
+  "sass",
+  "sass:watch"
+]);
