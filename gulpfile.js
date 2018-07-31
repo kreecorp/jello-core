@@ -5,6 +5,7 @@ var gulp = require("gulp"),
   htmlmin = require("gulp-htmlmin"),
   sass = require("gulp-sass"),
   cleanCSS = require("gulp-clean-css"),
+  del = require("del"),
   autoprefixer = require("gulp-autoprefixer");
 
 var paths = {
@@ -27,6 +28,10 @@ var paths = {
   },
   jello: {
     index: "./src/assets/sass/jello.scss"
+  },
+  delete: {
+    index: "./public/index.html",
+    css: "./public/style.css"
   }
 };
 
@@ -91,3 +96,41 @@ gulp.task(
     viewsWatcher
   )
 );
+
+// Build Config
+// Delete old build
+
+const cleanHtml = () => {
+  return del(paths.delete.index);
+};
+const cleanSass = () => {
+  return del(paths.delete.css);
+};
+
+const buildHtml = () => {
+  return gulp
+    .src(paths.index.src)
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true
+      })
+    )
+    .pipe(gulp.dest(paths.index.build));
+};
+
+const buildCss = () => {
+  return gulp
+    .src(paths.css.src)
+    .pipe(
+      autoprefixer({
+        browsers: ["last 2 versions"],
+        cascade: false
+      })
+    )
+    .pipe(cleanCSS({ compatibility: "ie8" }))
+    .pipe(gulp.dest(paths.css.build));
+};
+
+gulp.task("clean", gulp.series(cleanHtml, cleanSass));
+
+gulp.task("build", gulp.series("clean", gulp.parallel(buildHtml, buildCss)));
