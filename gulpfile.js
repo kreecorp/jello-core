@@ -113,4 +113,5 @@ gulp.task("css-build", function() {
     .pipe(gulp.dest(paths.css.build));
 });
 
-gulp.task("build", ["index-build", "css-build"]);
+gulp.task("build", 
+["index-build", "sass", "css-build"]);
