@@ -6,6 +6,7 @@ var gulp = require("gulp"),
   sass = require("gulp-sass"),
   cleanCSS = require("gulp-clean-css"),
   del = require("del"),
+  netlify = require("gulp-netlify"),
   autoprefixer = require("gulp-autoprefixer");
 
 var paths = {
@@ -131,6 +132,6 @@ const buildCss = () => {
     .pipe(gulp.dest(paths.css.build));
 };
 
-gulp.task("clean", gulp.series(cleanHtml, cleanSass));
+gulp.task("clean", gulp.series(cleanHtml, cleanSass, sassConverter));
 
 gulp.task("build", gulp.series("clean", gulp.parallel(buildHtml, buildCss)));
